@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CITY 3D GAME</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="toolbar">
+    <div class="toolbar__title">Tools</div>
+    <button id="camera-toggle" class="toolbar__button" type="button">
+      <img src="./Icon/Camera.png" alt="Camera" class="toolbar__button-icon" />
+      <span>Camera</span>
+    </button>
+    <button id="undo-road" class="toolbar__button" type="button">
+      <img src="./Icon/Undo.png" alt="Undo" class="toolbar__button-icon" />
+      <span>Undo</span>
+    </button>
+    <button id="end-day-btn" class="toolbar__button" type="button">
+      <img src="./Icon/evening.png" alt="End Day" class="toolbar__button-icon" />
+      <span>End Day</span>
+    </button>
+  </div>
+
+  <div id="city-stats-panel" class="city-stats-panel"></div>
+
+  <div class="toolbar" style="top: 280px;">
+    <div class="toolbar__title">City</div>
+    <button id="build-road-toggle" class="toolbar__button" type="button">
+      <img src="./Icon/road.png" alt="Road" class="toolbar__button-icon" />
+      <span>Build road</span>
+    </button>
+
+    <div class="toolbar__group">
+      <button id="build-house-toggle" class="toolbar__button" type="button">
+        <img src="./Icon/Resident.png" alt="Resident" class="toolbar__button-icon" />
+        <span>Resident</span>
+      </button>
+      <div class="toolbar__submenu">
+        <button
+          class="toolbar__submenu-button toolbar__submenu-button--active"
+          type="button"
+          data-house-height="1"
+        >
+          American house
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-house-height="2"
+        >
+          Two-story house
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-house-height="3"
+        >
+          Modern house
+        </button>
+      </div>
+    </div>
+
+    <div class="toolbar__group">
+      <button id="build-energy-toggle" class="toolbar__button" type="button">
+        <img src="./Icon/Energy.png" alt="Energy" class="toolbar__button-icon" />
+        <span>Energy</span>
+      </button>
+      <div class="toolbar__submenu">
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-energy-type="1"
+        >
+          Nuclear Powerplant
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-energy-type="2"
+        >
+          Thermal Powerplant
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-energy-type="3"
+        >
+          Wind Turbin
+        </button>
+      </div>
+    </div>
+
+    <div class="toolbar__group">
+      <button id="build-entertainment-toggle" class="toolbar__button" type="button">
+        <img src="./Icon/Entertainment.png" alt="Entertainment" class="toolbar__button-icon" />
+        <span>Entertainment</span>
+      </button>
+      <div class="toolbar__submenu">
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-entertainment-type="1"
+        >
+          Small park
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-entertainment-type="2"
+        >
+          Stadium
+        </button>
+      </div>
+    </div>
+
+    <div class="toolbar__group">
+      <button id="build-store-toggle" class="toolbar__button" type="button">
+        <img src="./Icon/Store.png" alt="Store" class="toolbar__button-icon" />
+        <span>Store</span>
+      </button>
+      <div class="toolbar__submenu">
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-store-type="1"
+        >
+          Convenient store
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-store-type="2"
+        >
+          Korean bakery
+        </button>
+      </div>
+    </div>
+
+    <div class="toolbar__group">
+      <button id="build-facilities-toggle" class="toolbar__button" type="button">
+        <img src="./Icon/Facilities.png" alt="Facilities" class="toolbar__button-icon" />
+        <span>Facilities</span>
+      </button>
+      <div class="toolbar__submenu">
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-facilities-type="1"
+        >
+          Bank
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-facilities-type="2"
+        >
+          Fire Station
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-facilities-type="3"
+        >
+          Hospital
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-facilities-type="4"
+        >
+          Police station
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-facilities-type="5"
+        >
+          School
+        </button>
+      </div>
+    </div>
+
+    <div class="toolbar__group">
+      <button id="build-factory-toggle" class="toolbar__button" type="button">
+        <img src="./Icon/Factory.png" alt="Factory" class="toolbar__button-icon" />
+        <span>Factory</span>
+      </button>
+      <div class="toolbar__submenu">
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-factory-type="1"
+        >
+          Small factory
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-factory-type="2"
+        >
+          Big factory
+        </button>
+        <button
+          class="toolbar__submenu-button"
+          type="button"
+          data-factory-type="3"
+        >
+          Industry
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.164/build/three.module.js"
+      }
+    }
+  </script>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
