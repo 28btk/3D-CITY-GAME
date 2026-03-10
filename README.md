@@ -18,7 +18,7 @@ Inspired by the mobile game **SimCity**, this project allows players to **build 
 ### Technologies Used
 
 - **Three.js** – 3D rendering engine for the browser  
-- **JavaScript / WebGL** – core game logic and graphics processing  
+- **JavaScript** – core game logic and graphics processing  
 - **HTML / CSS** – interface and layout  
 
 ### Inspiration
